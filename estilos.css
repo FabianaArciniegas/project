@@ -182,7 +182,7 @@ nav a:hover{
     margin-right: 110px;
 }
 
-.carouseel-Anterior{
+.carouseel-control-prev-icon{
     background-image: url(./img/flechaderecha.png);
     background-color: white;
 }
