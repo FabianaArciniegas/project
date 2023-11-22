@@ -5,36 +5,80 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Detalles del Producto</title>
+  <link href="./estilos.css" rel="stylesheet" type="text/css" />
+  
 </head>
 
 <body>
-  <header>
-    <h1>Detalles del Producto</h1>
-  </header>
-  <div class="detalles-producto">
-    <!-- Aquí mostrarás los detalles del producto utilizando JavaScript -->
-  </div>
 
-  <button id="agregarAlCarrito">Agregar al Carrito</button>
+  <header>
+
+    <div class="logo">
+      <a href="./index.html"><img  src="./img/logo.png" alt="logo"></a>
+      <a href="./index.html"><h2 class="nombre-tienda">Huellas Shop</h2></a>
+    </div>
+  
+    <nav>
+      <a href="./index.html">Inicio</a>
+      <a href="./index.html#quienessomos">Quienes somos</a>
+      <a href="./tiendavirtual.html">Tienda Virtual</a>
+      <a href="./index.html#contactanos">Contactanos</a>
+    </nav>
+  
+    <div class="contacto">
+      <h2 class="informacion-contacto">Llamanos</h2>
+      <h3>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16"><path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/></svg>
+        604-111111</h3>
+    </div>
+  
+    <div class="carrito">
+      <a href="carritodecompra.html">
+        <img src="./img/carrito-de-compra.png">
+      </a>
+    </div>
+  
+  </header>
+
+  <section>
+
+    <div class="titulodetalle">
+      <h1>Detalles del Producto</h1>
+    </div>
+    
+    <div class="informacionproducto">
+      <div class="detalleproducto">
+        <!-- Aquí mostrarás los detalles del producto utilizando JavaScript -->
+      </div>
+      <button class="botoncarrito" id="agregaralcarrito">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16"><path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+        </svg>Agregar al Carrito</button>
+    </div>
+
+  </section>
+
 
   <script>
+
     // Obtén el ID del producto de la URL (podemos usar la url porque no estamos haciendo http en internet sino en el equipo)
     const urlParams = new URL(window.location.href);
     const productId = urlParams.searchParams.get('id');
+
     // Función para obtener los detalles del product
     // Intenta recuperar el producto desde localStorage
     const productJSON = localStorage.getItem(`product_${productId}`);
 
     // Creamos el evento de escucha del click del botón agregar al carrito
-     document.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener("DOMContentLoaded", () => {
       const product = JSON.parse(productJSON);
       // Agrega un evento al botón "Agregar al Carrito"
-      const agregarAlCarritoButton = document.getElementById("agregarAlCarrito");
+      const agregarAlCarritoButton = document.getElementById("agregaralcarrito");
       agregarAlCarritoButton.addEventListener("click", () => {
         // Agrega el producto al carrito en localStorage
         agregarAlCarrito(product);
       });
     });
+
     // creamos la función de agregar al carrito de compra
     function agregarAlCarrito(product) {
       // Obtén el carrito actual desde localStorage o crea un array vacío
@@ -56,12 +100,22 @@
       const product = JSON.parse(productJSON);
 
       // Muestra los detalles del producto en la página
-      const detallesContainer = document.querySelector('.detalles-producto');
+      const detallesContainer = document.querySelector('.detalleproducto');
       detallesContainer.innerHTML = `
-        <h2>${product.title}</h2>
-        <img src="${product.image}" alt="${product.title}" style="width: 232px">
-        <p><strong>Precio:</strong> $${product.price}</p>
-        <p><strong>Descripción:</strong> ${product.description}</p>
+      <div class="detalleproducto">
+        <div>
+        <img src="${product.image}" alt="${product.title}" >
+        </div>
+        <div class="descripcion-detalleproducto">
+          <h2>${product.title}</h2>
+          <br>
+          <p>${product.description}</p>
+          <br><br><br>
+          <div class="divider-price"></div>
+          <h1>${product.price}</h1>
+          <div class="divider-price"></div>
+        </div>
+      </div>
       `;
     } else {
       // Si el producto no está en localStorage, muestra un mensaje de que no se ha encontrado.

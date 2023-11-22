@@ -8,6 +8,9 @@
   <h1>Carrito de Compras</h1>
   <ul id="carritoLista"></ul>
 
+  <button id="vaciarCarrito">Vaciar Carrito</button>
+
+
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       // Obtén el carrito desde localStorage
@@ -28,6 +31,19 @@
         carritoLista.innerHTML = "<p>El carrito está vacío.</p>";
       }
     });
+
+    document.addEventListener('DOMContentLoaded', function () {
+    // Obtenemos el botón y el contenedor del carrito
+    var vaciarCarritoButton = document.getElementById('vaciarCarrito');
+    var carritoContainer = document.getElementById('carritoLista');
+
+    // Añadimos un evento de clic al botón
+    vaciarCarritoButton.addEventListener('click', function () {
+        // Vaciamos el contenido del carrito
+        carritoContainer.innerHTML = '<p>El carrito está vacío.</p>';
+    });
+});
+
   </script>
 </body>
 </html>
