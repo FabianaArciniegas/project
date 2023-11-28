@@ -39,6 +39,11 @@
 
   <section>
 
+    <div class="titulodetalle">
+      <h3 class="title-section">Tienda Virtual</h3>
+      <div class="title-divider-section"></div>
+    </div>
+
     <div class="contenedor" id="agregaralcarrito">
       <!-- Aquí mostrarás los productos utilizando JavaScript -->
     </div>  
@@ -75,11 +80,11 @@
           <img src="${product.image}" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-text">${product.title}</h5>
-            <p class="card-text">${product.price}</p>
+            <p class="card-text">$ ${product.price}</p>
             <a href="detalleproducto.html?id=${product.id}" class="btn btn-link">Ver Detalle</a>
           </div>
           <div>
-          <button class="botoncarritoproducto">
+          <button class="botoncarritoproducto"  id="agregarAlCarrito_${product.id}">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16"><path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
             </svg>Agregar al Carrito
           </button>
@@ -87,36 +92,40 @@
         </div>
       `;
     });
-    contenedor.innerHTML = productos; // Agrega el contenido al elemento con la clase "contenedor"    
+    contenedor.innerHTML = productos; // Agrega el contenido al elemento con la clase "contenedor"      
+
+    // Agrega event listeners a los botones "Agregar al Carrito"
+    products.test.forEach((product) => {
+        const botonCarrito = document.getElementById(`agregarAlCarrito_${product.id}`);
+        
+        if (botonCarrito) {
+          botonCarrito.addEventListener('click', () => {
+            // Obtén el producto desde el localStorage utilizando el id
+            const productoSeleccionado = JSON.parse(localStorage.getItem(`product_${product.id}`));
+
+            // Agrega el producto al carrito utilizando la función común
+            agregarAlCarrito(productoSeleccionado);
+          });
+        }
+    });
   });
+    
+  // creamos la función de agregar al carrito de compra
+  function agregarAlCarrito(product) {
+    // Obtén el carrito actual desde localStorage o crea un array vacío
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
+    // Agrega el producto al carrito
+    carrito.push(product);
 
+    // Guarda el carrito actualizado en localStorage
+    localStorage.setItem("carrito", JSON.stringify(carrito));
 
-    // // Creamos el evento de escucha del click del botón agregar al carrito
-    // document.addEventListener("DOMContentLoaded", () => {
-    //   const product = JSON.parse(productJSON);
-    //   // Agrega un evento al botón "Agregar al Carrito"
-    //   const agregarAlCarritoButton = document.getElementById("agregaralcarrito");
-    //   agregarAlCarritoButton.addEventListener("click", () => {
-    //     // Agrega el producto al carrito en localStorage
-    //     agregarAlCarrito(product);
-    //   });
-    // });
-
-    // // creamos la función de agregar al carrito de compra
-    // function agregarAlCarrito(product) {
-    //   // Obtén el carrito actual desde localStorage o crea un array vacío
-    //   let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-
-    //   // Agrega el producto al carrito
-    //   carrito.push(product);
-
-    //   // Guarda el carrito actualizado en localStorage
-    //   localStorage.setItem("carrito", JSON.stringify(carrito));
-
-    //   // Puedes mostrar una confirmación de que el producto se ha agregado al carrito
-    //   alert("Producto agregado al carrito");
-    // }
+    // Puedes mostrar una confirmación de que el producto se ha agregado al carrito
+    alert("Producto agregado al carrito");
+  };
+  
 </script>
+
 </body>
 </html>

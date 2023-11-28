@@ -11,7 +11,7 @@ header{
     justify-content: space-between;
     align-items: center;
     height: 75px;
-    background-color: rgba(222, 75, 131, 0.606);
+    background-color: rgba(83, 148, 190, 0.606);
     padding: 10px;
     position: -webkit-sticky; 
     position: sticky;
@@ -25,6 +25,7 @@ header{
 
 .logo img{
     height: 75px;
+    padding-left: 20px
 }
 
 .nombre-tienda{
@@ -32,7 +33,6 @@ header{
     font-size: 1.6em;
     align-items: center;
     margin: 0;
-    padding-left: 20px;
 }
 
 a{
@@ -68,7 +68,7 @@ nav a:hover{
 }
 
 .carrito img{
-    height: 75px;
+    height: 60px;
     padding-right: 20px;
 }
 
@@ -77,11 +77,11 @@ nav a:hover{
 --------------------------------------------------------------*/
 
 .carousel-item{
-    margin-top: 30px;
+    margin-top: 15px;
 }
 
 .carousel-item img{
-    height: 700px;
+    height: 550px;
 }
 
 /*--------------------------------------------------------------
@@ -98,9 +98,9 @@ nav a:hover{
 }
 
 .title-divider-section {
-    width: 50px;
+    width: 200px;
     height: 3px;
-    background: rgba(222, 75, 131, 0.606);
+    background: rgba(83, 148, 190, 0.606);
     margin: 0 auto;
     margin-bottom: 20px;
 }
@@ -128,17 +128,6 @@ nav a:hover{
     margin-left: 10px;
 }
  
-/*--------------------------------------------------------------
-# Video
---------------------------------------------------------------*/
-
-.video{
-    padding-top: 90px;
-    height: 500px;
-    width: 100%;
-    align-items: center;
-    
-}
 
 /*--------------------------------------------------------------
 # Carrusel productos
@@ -182,7 +171,7 @@ nav a:hover{
     font-size: 1.2em;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-align: center;
-    color: rgba(222, 75, 131, 0.606);
+    color: black;
 }
 
 .card .btn-link{
@@ -191,7 +180,7 @@ nav a:hover{
 }
 
 .card .btn-link:hover{
-    color: rgba(222, 75, 131, 0.606);
+    color: rgba(83, 148, 190, 0.606);
 }
 
  /*--------------------------------------------------------------
@@ -199,9 +188,18 @@ nav a:hover{
 --------------------------------------------------------------*/
 
 #bannerimagen{
-    padding-top: 90px;
+    padding-top: 80px;
 }
 
+.bannerimagen1 img{
+    height: 300px;
+    width: 100%;
+}
+
+.bannerimagen2 img{
+    height: 300px;
+    width: 100%;
+}
 
  /*--------------------------------------------------------------
 # Contactanos
@@ -229,7 +227,7 @@ nav a:hover{
 --------------------------------------------------------------*/
 
 #piepagina {
-    background: rgba(222, 75, 131, 0.606);
+    background: rgba(83, 148, 190, 0.606);
     padding: 7px 0;
     color: black;
     font-size: 0.8em;
@@ -246,7 +244,6 @@ nav a:hover{
 
 .titulodetalle{
     text-align: center;
-    padding-bottom: 50px;
 }
 
 .informacionproducto{
@@ -267,7 +264,7 @@ nav a:hover{
 .descripcion-detalleproducto h2{
     font-size: 2em;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: rgba(222, 75, 131, 0.606);
+    color: black;
 }
 
 .descripcion-detalleproducto p{
@@ -278,7 +275,7 @@ nav a:hover{
 .descripcion-detalleproducto h1{
     font-size: 2em;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: rgba(81, 77, 78, 0.606);
+    color: black;
 }
 
 .divider-price{
@@ -293,11 +290,11 @@ nav a:hover{
     width: 260px;
     align-items: center;
     margin-top: 155px;
-    border: 2px solid  rgba(215, 136, 167, 0.606);
+    border: 2px solid  rgba(83, 148, 190, 0.606);
     border-radius: 10px;
     font-size: 1.5em;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: rgba(215, 136, 167, 0.606); 
+    background-color:  rgba(166, 210, 240, 0.606);
 }
 
 .botoncarrito:hover{
@@ -316,7 +313,7 @@ nav a:hover{
     display: flex; /* Muestra los elementos hijos en línea (horizontalmente) */
     flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea cuando no caben en la pantalla */
     justify-content: space-between; /* Distribuye el espacio horizontalmente entre los elementos */
-    padding-top: 50px;
+    padding-top: 10px;
 }
 
   /* Estilo para los cards */
@@ -336,6 +333,7 @@ nav a:hover{
     font-size: 1.3em;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-align: center;
+    color: black
    
 }
 
@@ -343,7 +341,7 @@ nav a:hover{
     font-size: 1.5em;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-align: center;
-    color: rgba(222, 75, 131, 0.606);
+    color: black;
     margin: 0;
 }
 
@@ -354,7 +352,7 @@ nav a:hover{
 }
 
 .card-tienda .btn-link:hover{
-    color: rgba(222, 75, 131, 0.606);
+    color: rgba(83, 148, 190, 0.606);
 }
 
 .botoncarritoproducto{
@@ -363,12 +361,12 @@ nav a:hover{
     justify-content: center;
     height: 30px;
     width: 100%;
-    margin-top: 10px;
-    border: 2px solid  rgba(215, 136, 167, 0.606);
+    margin-top: 30px;
+    border: 2px solid  rgba(83, 148, 190, 0.606);
     border-radius: 10px;
     font-size: 1.1em;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: rgba(238, 224, 230, 0.606); 
+    background-color: rgba(166, 210, 240, 0.606);
 }
 
 .botoncarritoproducto:hover{
@@ -378,5 +376,96 @@ nav a:hover{
 .botoncarritoproducto svg{
     margin-right: 15px;
 }
-
   
+/*--------------------------------------------------------------
+# Carrito de compra
+--------------------------------------------------------------*/
+
+#carritoLista {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#carritoLista p{
+    font-size: 1em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.cardcarrito{
+    margin: 5px; /* Agrega un margen entre los cards*/
+    border: 1px solid #c1c2ca;
+    padding: 16px;
+    padding-bottom: 0px;
+    border-radius: 20px;
+    text-align: center;
+    width: 40%;
+}
+
+.productoscarrito{
+    justify-content: center;
+    display: flex;
+}
+
+.productoscarrito img{
+    width: 120px;
+}
+
+.descripcion-productoscarrito h2{
+    font-size: 1.3em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: black;
+}
+
+.descripcion-productoscarrito p{
+    font-size: 1em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.descripcion-productoscarrito h1{
+    font-size: 1.3em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: black
+}
+
+.pagototal{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.valortotal{
+    text-align: center;
+    height: 30px;
+    width: 40%;
+    padding-top: 10px;
+    border: 2px solid  rgba(83, 148, 190, 0.606);
+    border-radius: 10px;
+    font-size: 1.1em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color:  rgba(166, 210, 240, 0.606);   
+}
+
+.botonvaciar{
+    display: flex;
+    justify-content: center;
+}
+
+.botonvaciarcarrito{
+    height: 30px;
+    width: 30%;
+    margin-top: 30px;
+    border: 2px solid  rgba(104, 179, 230, 0.606);
+    border-radius: 10px;
+    font-size: 1.1em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: rgba(166, 210, 240, 0.606);       
+}
+
+.botonvaciarcarrito:hover{
+    color: white;
+}
+
+
+
